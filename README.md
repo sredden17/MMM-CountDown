@@ -2,7 +2,7 @@
 
 Count down module for MagicMirror<sup>2</sup>
 
-![Screenshot](https://github.com/sredden17/MMM-CountDown/blob/main/screenshots/screenshot.png)
+![Screenshot](https://github.com/sredden17/MMM-CountDown/blob/main/screenshots/screenshot01.png?raw=true)
 
 
 ## Installation
