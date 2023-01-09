@@ -11,6 +11,11 @@ Count down module for MagicMirror<sup>2</sup>
   `git clone https://github.com/sredden17/MMM-CountDown.git`
 2. Configure your `~/MagicMirror/config/config.js`:
 
+```
+cd ~/MagicMirror/modules
+git clone https://github.com/sredden17/MMM-CountDown.git
+```
+
 Here is an example entry for `config.js`.
 
 ```
