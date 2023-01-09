@@ -1,0 +1,40 @@
+/* MMM-CountDown */
+
+.MMM-CountDown .module-content{
+  display: flex;
+  justify-content: center;
+}
+
+.MMM-CountDown .countDownWrapper{
+	background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;  
+	-webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}
+
+.MMM-CountDown .countDownWrapper {
+	/*	margin-bottom: 4px;	*/
+	display: flex;
+  justify-content: center;
+}
+
+.MMM-CountDown .countDown{
+	background-color:rgba(0,0,0,0.7);
+  border-radius:8px;
+	/*  padding:8px;
+  	margin-bottom: 10px; 	*/;
+	margin-top: 5px;
+
+	/*	border: 2px solid green;	*/
+}
+
+.MMM-CountDown .cdValue {
+	text-align: center;
+}
+.MMM-CountDown .cdLabel {
+	padding: 4px;
+	text-align: center;
+}
