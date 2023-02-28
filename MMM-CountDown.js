@@ -10,8 +10,8 @@ Module.register("MMM-CountDown",{
 		showDate: true,
 		showYears: true,
 		showMonths: true,
-		showHours: true,
 		showDays: true,
+		showHours: true,
 		showMinutes: true,
 		showSeconds: true,
 		yearsLabel: 'Years',
@@ -37,8 +37,8 @@ Module.register("MMM-CountDown",{
 		if (this.config.date == '')
 		{
 			var nextYearDate = new Date(new Date().getFullYear(), 0, 1);
-      nextYearDate.setFullYear(nextYearDate.getFullYear()+1);
-     	this.config.date = String(nextYearDate);
+			nextYearDate.setFullYear(nextYearDate.getFullYear()+1);
+			this.config.date = String(nextYearDate);
 		}
 		
 		var self = this;
@@ -81,22 +81,22 @@ Module.register("MMM-CountDown",{
 		
 		let valClass = "normal medium light cdValue ";
 		let row = document.createElement("tr");
-		row.appendChild(this.generateRowCell(valClass + "yearsValue", payload.years));
-		row.appendChild(this.generateRowCell(valClass + "monthsValue", payload.months));
-		row.appendChild(this.generateRowCell(valClass + "daysValue", payload.days));
-		row.appendChild(this.generateRowCell(valClass + "hoursValue", payload.hours));
-		row.appendChild(this.generateRowCell(valClass + "minutesValue", payload.minutes));
-		row.appendChild(this.generateRowCell(valClass + "secondsValue", payload.seconds));
+		if (showYears)		row.appendChild(this.generateRowCell(valClass + "yearsValue", payload.years));
+		if (showMonths)		row.appendChild(this.generateRowCell(valClass + "monthsValue", payload.months));
+		if (showDays)			row.appendChild(this.generateRowCell(valClass + "daysValue", payload.days));
+		if (showHours) 		row.appendChild(this.generateRowCell(valClass + "hoursValue", payload.hours));
+		if (showMinutes)	row.appendChild(this.generateRowCell(valClass + "minutesValue", payload.minutes));
+		if (showSeconds)	row.appendChild(this.generateRowCell(valClass + "secondsValue", payload.seconds));
 		tbl.appendChild(row);
 
 		let lblClass = " xsmall thin cdLabel ";		
 		row = document.createElement("tr");
-		row.appendChild(this.generateRowCell(lblClass + "yearLabel", this.config.yearsLabel));
-		row.appendChild(this.generateRowCell(lblClass + "monthsLabel", this.config.monthsLabel));
-		row.appendChild(this.generateRowCell(lblClass + "daysLabel", this.config.daysLabel));
-		row.appendChild(this.generateRowCell(lblClass + "hoursLabel", this.config.hoursLabel));
-		row.appendChild(this.generateRowCell(lblClass + "minutesLabel", this.config.minutesLabel));
-		row.appendChild(this.generateRowCell(lblClass + "secondsLabel", this.config.secondsLabel));
+		if (showYears)		row.appendChild(this.generateRowCell(lblClass + "yearLabel", this.config.yearsLabel));
+		if (showMonths)		row.appendChild(this.generateRowCell(lblClass + "monthsLabel", this.config.monthsLabel));
+		if (showDays)			row.appendChild(this.generateRowCell(lblClass + "daysLabel", this.config.daysLabel));
+		if (showHours) 		row.appendChild(this.generateRowCell(lblClass + "hoursLabel", this.config.hoursLabel));
+		if (showMinutes)	row.appendChild(this.generateRowCell(lblClass + "minutesLabel", this.config.minutesLabel));
+		if (showSeconds)	row.appendChild(this.generateRowCell(lblClass + "secondsLabel", this.config.secondsLabel));
 		tbl.appendChild(row);
 
 		let tblwrapper = document.createElement("div");
@@ -108,9 +108,9 @@ Module.register("MMM-CountDown",{
 	},
 	
 	generateRowCell: function(className, value){
-    let td = document.createElement("td");
-    td.className = className;
-    td.innerHTML = String(value).padStart(2, '0');
+		let td = document.createElement("td");
+		td.className = className;
+		td.innerHTML = String(value).padStart(2, '0');
 		return td;
 	},
 	
